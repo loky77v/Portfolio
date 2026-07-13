@@ -32,7 +32,7 @@ export default function Projects({ currentTheme }: ProjectsProps) {
       tags: ["HTML", "CSS", "JavaScript", "Responsive Web Design"],
       imagePlaceholder: "solar",
       imageUrl: solarImg,
-      liveUrl: "https://vidhuth-vaahan-india.vercel.app",
+      liveUrl: "https://vidhyth-vaahan-india.vercel.app/",
       githubUrl: "https://github.com/loky77v/VidhythVaahanIndia.git",
     },
   ];
