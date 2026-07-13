@@ -23,7 +23,7 @@ export default function Projects({ currentTheme }: ProjectsProps) {
       imagePlaceholder: "norvex",
       imageUrl: norvexImg,
       liveUrl: "https://norvex-nine.vercel.app",
-      githubUrl: "https://github.com/loky77v/norvex",
+      githubUrl: "https://github.com/sdinesh10984-ship-it/NORVEX.git",
     },
     {
       title: "Vidhuth Vaahan India",
