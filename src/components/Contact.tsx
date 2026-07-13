@@ -130,7 +130,7 @@ export default function Contact({ currentTheme }: ContactProps) {
               </h4>
               <div className="flex items-center gap-3">
                 <a
-                  href="www.linkedin.com/in/v-lokeshwara-a3418a39a"
+                  href="www.linkedin.com/in/v-lokeshwara-a3418a39a" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-stone-300/80 dark:border-slate-800 hover:border-cyan-500 text-stone-700 dark:text-slate-300 hover:text-cyan-500 transition-all shadow-sm"
