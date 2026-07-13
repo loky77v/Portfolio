@@ -48,65 +48,65 @@ export default function About({ currentTheme }: AboutProps) {
               <CircuitOverlay />
               <div className="aspect-square w-full rounded-2xl overflow-hidden relative group border border-cyan-500/20 shadow-xl">
 
-  {/* Background Image */}
-  <img
-    src="src/pic2.png"
-    alt="V Lokeshwara"
-    className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
-  />
+                {/* Background Image */}
+                <img
+                  src="src/assets/images/loky.jpg"
+                  alt="V Lokeshwara"
+                  className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                />
 
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
 
-  {/* Glow */}
-  <div className="absolute inset-0 rounded-2xl ring-1 ring-cyan-400/20 group-hover:ring-cyan-400/60 transition-all duration-500" />
+                {/* Glow */}
+                <div className="absolute inset-0 rounded-2xl ring-1 ring-cyan-400/20 group-hover:ring-cyan-400/60 transition-all duration-500" />
 
-  {/* Content */}
-  <div className="absolute bottom-0 left-0 right-0 z-10 p-6">
+                {/* Content */}
+                <div className="absolute bottom-0 left-0 right-0 z-10 p-6">
 
-    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 backdrop-blur-md border border-emerald-400/30 text-emerald-300 text-[10px] font-semibold tracking-widest">
-      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-      AVAILABLE
-    </span>
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 backdrop-blur-md border border-emerald-400/30 text-emerald-300 text-[10px] font-semibold tracking-widest">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    AVAILABLE
+                  </span>
 
-    <h3 className="mt-4 text-3xl font-extrabold text-white tracking-tight drop-shadow-lg">
-      V Lokeshwara
-    </h3>
+                  <h3 className="mt-4 text-3xl font-extrabold text-white tracking-tight drop-shadow-lg">
+                    V Lokeshwara
+                  </h3>
 
-    <p className="mt-1 text-cyan-300 font-mono text-sm tracking-wide">
-      Web Developer & QA Professional
-    </p>
+                  <p className="mt-1 text-cyan-300 font-mono text-sm tracking-wide">
+                    Web Developer & QA Professional
+                  </p>
 
-    <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/50 backdrop-blur-md border border-cyan-400/20">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-4 h-4 text-cyan-400"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0L6.343 16.657A8 8 0 1117.657 16.657z"
-        />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-        />
-      </svg>
+                  <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/50 backdrop-blur-md border border-cyan-400/20">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-4 h-4 text-cyan-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0L6.343 16.657A8 8 0 1117.657 16.657z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
 
-      <span className="text-sm text-white">
-        Coxtown, Bangalore, India
-      </span>
-    </div>
+                    <span className="text-sm text-white">
+                      Coxtown, Bangalore, India
+                    </span>
+                  </div>
 
-  </div>
+                </div>
 
-</div>
+              </div>
 
               {/* Languages section inside Card */}
               <div className="mt-6 space-y-3.5 border-t border-stone-200/50 dark:border-slate-800/50 pt-5">
@@ -115,10 +115,10 @@ export default function About({ currentTheme }: AboutProps) {
                 </h4>
                 <div className="space-y-2">
                   {languages.map((lang) => (
-                     <div key={lang.name} className="flex items-center justify-between">
+                    <div key={lang.name} className="flex items-center justify-between">
                       <span className="text-xs font-semibold text-stone-800 dark:text-slate-200">{lang.name}</span>
                       <span className="text-[10px] font-mono text-stone-800 dark:text-slate-300 font-medium">{lang.prof}</span>
-                     </div>
+                    </div>
                   ))}
                 </div>
               </div>
