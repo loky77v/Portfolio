@@ -12,7 +12,7 @@ interface AboutProps {
 
 export default function About({ currentTheme }: AboutProps) {
   // Resume Link requested
-  const cvLink = "https://drive.google.com/file/d/1vsqqHX0RpZRyz932b63V8ggeLz2Jfgz0/view?usp=sharing";
+  const cvLink = "https://drive.google.com/file/d/1pEd8Nvo847bRwqcJ9wea5hMdGCOZKIWP/view?usp=drive_link";
 
   const metrics = [
     { label: "BCA CGPA", value: "8.15 / 10", icon: GraduationCap },
