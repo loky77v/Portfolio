@@ -1,15 +1,13 @@
 # V Lokeshwara – Portfolio
 
-Personal portfolio website built with HTML and CSS.
+Personal portfolio website.
 
 🔗 Live: https://portfolio-loky.vercel.app
 
 ## Built With
-- HTML5
-- CSS3
-- Vanilla JavaScript
+- React, TypeScript, Vite (framework)
+- HTML5, CSS3
+- Manual content & styling customization
 
-## Features
-- Responsive design
-- Projects showcase
-- Skills & certifications
+## Sections
+- About, Skills, Projects, Experience, Contact
