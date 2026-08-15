@@ -1,6 +1,17 @@
 import nodemailer from "nodemailer";
 
-export default async function handler(req: any, res: any) {
+type VercelRequest = {
+  method?: string;
+  body?: { name?: string; email?: string; message?: string };
+};
+
+type VercelResponse = {
+  setHeader: (name: string, value: string) => void;
+  status: (code: number) => VercelResponse;
+  json: (body: unknown) => VercelResponse;
+};
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Content-Type", "application/json");
 
   if (req.method !== "POST") {
