@@ -19,18 +19,14 @@ export default function Skills({ currentTheme }: SkillsProps) {
 
   const developmentSkills = [
     
-    { name: "JavaScript", level: 90, tagline: "Async control, DOM manipulation" },
+    { name: "JavaScript", level: 70, tagline: "Async control, DOM manipulation" },
     { name: "HTML & CSS", level: 95, tagline: "Semantic markup & Tailwind style" },
-    { name: "Python", level: 75, tagline: "Scripting, algorithm implementations" },
-    { name: "MySQL", level: 80, tagline: "Relational database queries" },
-    { name: "PHP", level: 70, tagline: "Server-side templates" },
     { name: "Java & C", level: 75, tagline: "Core OOP fundamentals" },
   ];
 
   const qaSkills = [
     { name: "Manual Testing", level: 95, tagline: "Black box, exploratory testing" },
     { name: "Bug Reporting", level: 95, tagline: "Detailed bug lifecycles & logging" },
-    { name: "UI/UX Testing", level: 90, tagline: "Visual audits & alignment checks" },
     { name: "Test Cases Creation", level: 90, tagline: "Structured test scripts & scenarios" },
     { name: "Functional Testing", level: 92, tagline: "Validation of system requirements" },
     { name: "Cross-browser Testing", level: 95, tagline: "Chrome, Safari, Edge alignment" },
@@ -39,8 +35,6 @@ export default function Skills({ currentTheme }: SkillsProps) {
   const toolsSkills = [
     { name: "Git & GitHub", level: 90, tagline: "Version control & repository forks" },
     { name: "Advanced Excel", level: 85, tagline: "Pivot tables, macros, data parsing" },
-    { name: "SEO & Backlinks", level: 80, tagline: "Optimizing reach & page speed metrics" },
-    { name: "Tableau & Power BI", level: 85, tagline: "Interactive dashboard visualizations" },
     { name: "Canva & Adobe InDesign", level: 80, tagline: "Creative banner & document designs" },
   ];
 
