@@ -24,11 +24,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ success: false, error: "Name, email and message are required." });
   }
 
-  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_RECEIVER } = process.env;
+  const required = ["SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASS", "CONTACT_RECEIVER"] as const;
+  const missing = required.filter((key) => !process.env[key]);
 
-  if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS || !CONTACT_RECEIVER) {
-    return res.status(500).json({ success: false, error: "Contact email service is not configured." });
+  if (missing.length > 0) {
+    console.error("Missing contact environment variables:", missing);
+    return res.status(500).json({
+      success: false,
+      error: `Contact email service is not configured. Missing: ${missing.join(", ")}`,
+    });
   }
+
+  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_RECEIVER } = process.env;
 
   try {
     const transporter = nodemailer.createTransport({
