@@ -15,9 +15,9 @@ export default function About({ currentTheme }: AboutProps) {
   const cvLink = "https://drive.google.com/file/d/1pEd8Nvo847bRwqcJ9wea5hMdGCOZKIWP/view?usp=drive_link";
 
   const metrics = [
-    { label: "BCA CGPA", value: "8.15 / 10", icon: GraduationCap },
-    { label: "Client Sites Tested", value: "3 - 4", icon: Award },
-    { label: "Bugs Identified", value: "30+", icon: ShieldAlert },
+    { label: "BCA CGPA", value: "8.15 / 10.00", icon: GraduationCap },
+    { label: "Client Sites Tested", value: "3 – 4", icon: Award },
+    { label: "Defects Reported", value: "30+", icon: ShieldAlert },
   ];
 
   const languages = [
@@ -77,13 +77,13 @@ export default function About({ currentTheme }: AboutProps) {
     </h3>
 
     <p className="mt-1 text-cyan-300 font-mono text-sm tracking-wide">
-      Web Developer & QA Professional
+      Web Developer & QA Tester
     </p>
 
     <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/50 backdrop-blur-md border border-cyan-400/20">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="w-4 h-4 text-cyan-400"
+        className="w-4 h-4 text-cyan-400 shrink-0"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -102,8 +102,8 @@ export default function About({ currentTheme }: AboutProps) {
         />
       </svg>
 
-      <span className="text-sm text-white">
-        Coxtown, Bangalore, India
+      <span className="text-xs text-white">
+        Coxtown, Bengaluru 560005, India
       </span>
     </div>
 
@@ -114,7 +114,7 @@ export default function About({ currentTheme }: AboutProps) {
               {/* Languages section inside Card */}
               <div className="mt-6 space-y-3.5 border-t border-stone-200/50 dark:border-slate-800/50 pt-5">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-stone-800 dark:text-slate-300 flex items-center gap-2">
-                  <Languages className="w-3.5 h-3.5" /> Languages Spoken
+                  <Languages className="w-3.5 h-3.5" /> Languages
                 </h4>
                 <div className="space-y-2">
                   {languages.map((lang) => (
@@ -131,15 +131,15 @@ export default function About({ currentTheme }: AboutProps) {
           {/* Detailed summary and CV download */}
           <div className="lg:col-span-7 space-y-6">
             <h3 className="text-xl md:text-2xl font-sans font-bold text-stone-900 dark:text-white">
-              Symmetric Expertise in Web Development & Identifying Bugs
+              Hands-on Web Development & Precision QA Testing
             </h3>
 
             <p className="text-sm text-stone-900 dark:text-slate-200 font-medium leading-relaxed">
-              I am a Bachelor of Computer Applications (BCA) undergraduate with a strong academic foundation (8.15 CGPA) and hands-on professional expertise in frontend web development and manual QA testing.
+              Fresher BCA graduate (8.15 CGPA) from RBANM's First Grade College, Bengaluru, with hands-on experience identifying, documenting, and reporting technical issues. During my internship at DIGIWORQ Digital Marketing & Technology Solutions, I reported 30+ defects (functional failures, layout inconsistencies, responsiveness issues) across 3–4 client websites and followed each through to verified resolution.
             </p>
 
             <p className="text-sm text-stone-900 dark:text-slate-200 font-medium leading-relaxed">
-              During my internships and projects, I have designed and built responsive web pages using HTML and CSS, ensuring complete cross-device compatibility. On the testing side, I've successfully audited multiple client applications, diagnosing over 30 UI/UX flaws and functional errors, documenting them in detailed reports, and optimizing search engine visibility.
+              Skilled in building responsive web pages using HTML5 and CSS3 as part of an agile 5-member team for Vidhyuth Vaahan India, with working knowledge of JavaScript (basic), Java (basic), and Git/GitHub. In addition, I co-authored and presented a conference paper on "Artificial Intelligence in Communication Systems" at ICIICT-2026, Thiruthangal Nadar College, Chennai.
             </p>
 
             {/* Quick Metrics display */}

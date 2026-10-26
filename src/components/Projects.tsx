@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import { ExternalLink, Github, Sparkles } from "lucide-react";
+import { ExternalLink, Github, Sparkles, Users, CheckCircle2 } from "lucide-react";
 import { ThemeConfig, Project } from "../types";
 import CircuitOverlay from "./CircuitOverlay";
 // @ts-ignore
@@ -13,41 +13,40 @@ interface ProjectsProps {
 }
 
 export default function Projects({ currentTheme }: ProjectsProps) {
-  // Real projects based on resume + portfolio features
+  // Real projects strictly aligned with the resume
   const projectsList: Project[] = [
     {
-      title: "NORVEX - Intelligent Architectural System",
+      title: "NORVEX – Intelligent Architectural System",
+      team: "Team of 3",
       description:
-        "An AI-integrated architectural visualization and interior design recommendation platform. Contributed to frontend HTML/CSS layouts and supported an AI engine that generated customized design templates based on budget, dimensions, style, and regional climate. Extensively tested for UI/UX defects across viewports.",
-      tags: ["HTML", "CSS", "JavaScript", "Firebase", "AI APIs"],
+        "An AI-integrated architectural visualization and interior design platform. Actively performed manual QA validation and contributed frontend styling enhancements.",
+      bullets: [
+        "Manually tested the application for bugs, UI issues, responsiveness, and cross-browser compatibility.",
+        "Tracked identified defects and verified fixes through to verified resolution.",
+        "Made frontend styling updates (HTML/CSS) to polish the platform interface.",
+      ],
+      tags: ["Manual QA", "Bug Tracking", "HTML/CSS", "Cross-Browser", "Team Project"],
       imagePlaceholder: "norvex",
       imageUrl: norvexImg,
-      liveUrl: "https://norvex-intelligent-architectural-sy.vercel.app/",
+      liveUrl: "https://norvex-nine.vercel.app",
       githubUrl: "https://github.com/loky77v/NORVEX---Intelligent-Architectural-System-.git",
     },
     {
-      title: "Vidhuth Vaahan India",
+      title: "Vidhyuth Vaahan India – EV and Solar Services Website",
       description:
-        "Independently conceptualized, designed, and launched 5 fully responsive web pages representing a modern clean-energy Hub. Engineered pixel-perfect solar assets grids, navigation transitions, and smartphone alignments using standard modular CSS structure.",
-      tags: ["HTML", "CSS", "JavaScript", "Responsive Web Design"],
+        "A responsive multi-page web platform designed and deployed for a clean-energy solar services client.",
+      bullets: [
+        "Built and deployed a responsive multi-page website for a solar services client using HTML and CSS.",
+        "Developed clean layouts, navigation transitions, and smartphone responsive alignments.",
+        "Delivered as part of a 5-member team during DIGIWORQ internship.",
+      ],
+      tags: ["HTML5", "CSS3", "Responsive Web Design", "Multi-page Website", "Client Project"],
       imagePlaceholder: "solar",
       imageUrl: solarImg,
-      liveUrl: "https://vidhyth-vaahan-india.vercel.app/",
+      liveUrl: "https://vidhyth-vaahan-india.vercel.app",
       githubUrl: "https://github.com/loky77v/VidhythVaahanIndia.git",
     },
   ];
-
-  const getCardBg = (type: string) => {
-    switch (type) {
-      case "norvex":
-        return "bg-gradient-to-tr from-cyan-950/20 to-slate-900/10";
-      case "solar":
-        return "bg-gradient-to-tr from-amber-950/10 to-orange-900/10";
-      default:
-        return "bg-gradient-to-tr from-slate-900 to-slate-950";
-    }
-  };
-
 
   return (
     <section id="projects" className="py-24 relative">
@@ -59,53 +58,58 @@ export default function Projects({ currentTheme }: ProjectsProps) {
           </h2>
           <div className="w-12 h-1 bg-gradient-to-r from-cyan-500 to-emerald-500 mx-auto rounded-full" />
           <p className="text-stone-800 dark:text-slate-300 text-xs uppercase tracking-wider font-mono mt-3">
-            Web Development & QA Showcases
+            Web Development & QA Testing Showcases
           </p>
         </div>
 
         {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {projectsList.map((project, index) => (
             <motion.div
               key={project.title}
               whileHover={{ scale: 1.01 }}
               id={`project-card-${index}`}
-              className={`flex flex-col justify-between rounded-3xl overflow-hidden ${currentTheme.cardClass} relative h-full group`}
+              className={`flex flex-col justify-between rounded-3xl overflow-hidden ${currentTheme.cardClass} relative h-full group border border-white/10`}
             >
               <CircuitOverlay />
               <div>
                 {/* Visual Project Cover Header */}
-                <div className="h-48 relative overflow-hidden border-b border-stone-200/40 dark:border-slate-800/20 group">
-                  {/* Subtle dark overlay for readability and contrast */}
+                <div className="h-52 relative overflow-hidden border-b border-stone-200/40 dark:border-slate-800/20 group">
                   <div className="absolute inset-0 bg-slate-950/25 z-10 transition-colors duration-300 group-hover:bg-slate-950/40" />
                   
-                  {project.imageUrl ? (
+                  {project.imageUrl && (
                     <img
                       src={project.imageUrl}
                       alt={project.title}
                       referrerPolicy="no-referrer"
                       className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     />
-                  ) : (
-                    <div className={`absolute inset-0 flex items-center justify-center ${getCardBg(project.imagePlaceholder)}`}>
-                      <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
+                  )}
+
+                  {/* Team badge overlay if present */}
+                  {project.team && (
+                    <div className="absolute top-3 right-3 z-20">
+                      <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold tracking-wider uppercase bg-slate-950/80 backdrop-blur-md text-emerald-400 px-3 py-1 rounded-full border border-emerald-500/30 shadow-sm">
+                        <Users className="w-3 h-3" />
+                        {project.team}
+                      </span>
                     </div>
                   )}
 
-                  {/* Tech stack accent badge overlay */}
+                  {/* Primary Tech Badge */}
                   <div className="absolute bottom-3 left-3 z-20">
-                    <span className="text-[9px] font-mono font-extrabold tracking-widest uppercase bg-slate-950/80 backdrop-blur-md text-[#00C2A8] px-2.5 py-1 rounded-lg border border-slate-800 shadow-sm">
-                      {project.tags[0]} Integrated
+                    <span className="text-[10px] font-mono font-extrabold tracking-widest uppercase bg-slate-950/80 backdrop-blur-md text-[#00C2A8] px-3 py-1 rounded-lg border border-slate-800 shadow-sm">
+                      {project.tags[0]}
                     </span>
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
-                  <div className="flex items-center gap-1.5 mb-3">
+                  <div className="flex items-center gap-1.5 mb-2">
                     <Sparkles className="w-3.5 h-3.5 text-amber-500" />
                     <span className="text-[10px] font-mono font-bold tracking-wide uppercase text-stone-800 dark:text-slate-300">
-                      Feature Project
+                      Verified Portfolio Project
                     </span>
                   </div>
 
@@ -113,15 +117,27 @@ export default function Projects({ currentTheme }: ProjectsProps) {
                     {project.title}
                   </h3>
 
-                  <p className="text-xs text-stone-900 dark:text-slate-200 font-medium leading-relaxed mb-6">
+                  <p className="text-xs text-stone-900 dark:text-slate-200 font-medium leading-relaxed mb-4">
                     {project.description}
                   </p>
+
+                  {/* Bullet points from resume */}
+                  {project.bullets && (
+                    <div className="space-y-2 mb-6 bg-slate-950/30 p-3.5 rounded-xl border border-white/5">
+                      {project.bullets.map((bullet, bIdx) => (
+                        <div key={bIdx} className="flex items-start gap-2 text-[11px] text-stone-800 dark:text-slate-300 leading-snug">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                          <span>{bullet}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
 
               {/* Tags and CTA Actions */}
               <div className="px-6 pb-6">
-                <div className="flex flex-wrap gap-1.5 mb-6">
+                <div className="flex flex-wrap gap-1.5 mb-5">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -136,7 +152,7 @@ export default function Projects({ currentTheme }: ProjectsProps) {
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
-                      target={project.liveUrl.startsWith("#") ? "_self" : "_blank"}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-stone-900 dark:bg-white text-white dark:text-stone-900 text-xs font-semibold hover:bg-stone-800 dark:hover:bg-slate-100 transition-colors shadow-sm"
                     >

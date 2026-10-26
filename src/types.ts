@@ -5,7 +5,9 @@
 
 export interface Project {
   title: string;
+  team?: string;
   description: string;
+  bullets?: string[];
   tags: string[];
   imagePlaceholder: string;
   imageUrl?: string;
@@ -34,6 +36,16 @@ export interface Certification {
   name: string;
   issuer: string;
   date?: string;
+}
+
+export interface ConferencePresentation {
+  title: string;
+  conference: string;
+  location: string;
+  date: string;
+  role: string;
+  description?: string;
+  type: "conference";
 }
 
 export interface SkillGroup {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Code, ShieldCheck, Wrench, Sparkles, CheckCircle2 } from "lucide-react";
+import { Code, ShieldCheck, Wrench, Sparkles, CheckCircle2, Monitor, Users, Cpu } from "lucide-react";
 import { ThemeConfig } from "../types";
 import CircuitOverlay from "./CircuitOverlay";
 
@@ -9,43 +9,69 @@ interface SkillsProps {
 }
 
 export default function Skills({ currentTheme }: SkillsProps) {
-  const [activeTab, setActiveTab] = useState<"dev" | "qa" | "tools">("dev");
+  const [activeTab, setActiveTab] = useState<"qa" | "dev" | "it" | "tools" | "soft">("qa");
 
   const skillCategories = [
-    { id: "dev" as const, label: "Development & Languages", icon: Code },
-    { id: "qa" as const, label: "QA & Testing", icon: ShieldCheck },
-    { id: "tools" as const, label: "Tools & Analytics", icon: Wrench },
-  ];
-
-  const developmentSkills = [
-    
-    { name: "JavaScript", level: 70, tagline: "Async control, DOM manipulation" },
-    { name: "HTML & CSS", level: 95, tagline: "Semantic markup & Tailwind style" },
-    { name: "Java & C", level: 75, tagline: "Core OOP fundamentals" },
+    { id: "qa" as const, label: "Testing & QA", icon: ShieldCheck },
+    { id: "dev" as const, label: "Programming & Web", icon: Code },
+    { id: "it" as const, label: "IT Support & Systems", icon: Monitor },
+    { id: "tools" as const, label: "Tools & Productivity", icon: Wrench },
+    { id: "soft" as const, label: "Professional Skills", icon: Users },
   ];
 
   const qaSkills = [
-    { name: "Manual Testing", level: 95, tagline: "Black box, exploratory testing" },
-    { name: "Bug Reporting", level: 95, tagline: "Detailed bug lifecycles & logging" },
-    { name: "Test Cases Creation", level: 90, tagline: "Structured test scripts & scenarios" },
-    { name: "Functional Testing", level: 92, tagline: "Validation of system requirements" },
-    { name: "Cross-browser Testing", level: 95, tagline: "Chrome, Safari, Edge alignment" },
+    { name: "Manual Testing", level: 95, tagline: "Black-box, functional & exploratory system test execution" },
+    { name: "Defect Identification", level: 95, tagline: "Isolating UI bugs, broken logic, and responsiveness flaws" },
+    { name: "Bug Reporting", level: 95, tagline: "Written audit reports, steps to reproduce, severity classification" },
+    { name: "Functional Testing", level: 92, tagline: "Verifying user flows, form validation, and core feature logic" },
+    { name: "UI & Layout Validation", level: 94, tagline: "Cross-device responsiveness, typography, and element hierarchy" },
+    { name: "Cross-Browser Testing", level: 90, tagline: "Compatibility checks across Chrome, Safari, and Edge" },
+  ];
+
+  const developmentSkills = [
+    { name: "HTML5", level: 95, tagline: "Semantic markup, accessibility, and modern responsive structures" },
+    { name: "CSS3", level: 92, tagline: "Flexbox, CSS Grid, media queries, animations, and Tailwind styling" },
+    { name: "JavaScript (Basic)", level: 75, tagline: "DOM manipulation, event handling, async fetch, and interactive UI" },
+    { name: "Java (Basic)", level: 70, tagline: "Core OOP fundamentals, class hierarchies, and logic syntax" },
+  ];
+
+  const itSkills = [
+    { name: "IT Support Fundamentals", level: 90, tagline: "End-user support, service requests, and hardware/software basics" },
+    { name: "Service Desk Fundamentals", level: 88, tagline: "Ticket triaging, user assistance, and structured troubleshooting" },
+    { name: "Basic Technical Troubleshooting", level: 90, tagline: "Diagnosing connectivity, application crashes, and peripheral errors" },
+    { name: "Windows 10 / 11", level: 92, tagline: "OS configuration, management console, drivers, and system utilities" },
+    { name: "Hardware & Software Troubleshooting", level: 85, tagline: "Basic diagnostic workflows, patch updates, and component isolation" },
   ];
 
   const toolsSkills = [
-    { name: "Git & GitHub", level: 90, tagline: "Version control & repository forks" },
-    { name: "Advanced Excel", level: 85, tagline: "Pivot tables, macros, data parsing" },
-    { name: "Canva & Adobe InDesign", level: 80, tagline: "Creative banner & document designs" },
+    { name: "Git & GitHub", level: 90, tagline: "Version control, branching, repository management, and collaboration" },
+    { name: "VS Code", level: 92, tagline: "IDE extensions, debugging, linting, and workspace configuration" },
+    { name: "Microsoft Excel (Advanced)", level: 92, tagline: "Certified in advanced formulas, pivot tables, data parsing, and macros" },
+    { name: "Microsoft 365 & Word", level: 90, tagline: "Documentation formatting, cloud collaboration, and office suites" },
+    { name: "Prompt Engineering", level: 88, tagline: "Structured LLM prompting, research synthesis, and workflow augmentation" },
+    { name: "Adobe InDesign & Canva", level: 82, tagline: "E-book layout formatting, digital marketing banners, and visual assets" },
+  ];
+
+  const professionalSkills = [
+    { name: "Technical Communication", level: 95, tagline: "Communicating complex technical defects clearly to team leads" },
+    { name: "Documentation", level: 95, tagline: "Detailed written test reports, bug logs, and resolution tracking" },
+    { name: "Attention to Detail", level: 96, tagline: "Pixel-level precision in spotting layout shifts and UI inconsistencies" },
+    { name: "Problem-Solving", level: 92, tagline: "Methodical root cause analysis from discovery to verified fix" },
+    { name: "Team Collaboration", level: 94, tagline: "Thriving in 3 to 5 member project teams and cross-functional groups" },
   ];
 
   const getSkillsByTab = () => {
     switch (activeTab) {
-      case "dev":
-        return developmentSkills;
       case "qa":
         return qaSkills;
+      case "dev":
+        return developmentSkills;
+      case "it":
+        return itSkills;
       case "tools":
         return toolsSkills;
+      case "soft":
+        return professionalSkills;
     }
   };
 
@@ -55,11 +81,11 @@ export default function Skills({ currentTheme }: SkillsProps) {
         {/* Section Title */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-sans font-bold tracking-tight mb-3">
-            Skills & Expertise
+            Technical & Professional Skills
           </h2>
           <div className="w-12 h-1 bg-gradient-to-r from-cyan-500 to-emerald-500 mx-auto rounded-full" />
           <p className="text-stone-800 dark:text-slate-300 text-xs uppercase tracking-wider font-mono mt-3">
-            Specialized Capabilities
+            Verified Competencies & Applied Toolsets
           </p>
         </div>
 
@@ -87,7 +113,7 @@ export default function Skills({ currentTheme }: SkillsProps) {
         </div>
 
         {/* Skills Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {getSkillsByTab().map((skill, index) => (
             <motion.div
               key={skill.name}
@@ -106,7 +132,7 @@ export default function Skills({ currentTheme }: SkillsProps) {
                   </h3>
                   <Sparkles className="w-3.5 h-3.5 text-amber-500 opacity-0 group-hover:opacity-100 transition-opacity animate-pulse" />
                 </div>
-                <p className="text-[11px] text-stone-900 dark:text-slate-200 leading-tight font-bold mb-4">
+                <p className="text-[11px] text-stone-900 dark:text-slate-200 leading-tight font-medium mb-4">
                   {skill.tagline}
                 </p>
               </div>
@@ -129,7 +155,7 @@ export default function Skills({ currentTheme }: SkillsProps) {
                 </div>
                 <div className="flex items-center gap-1.5 mt-3 text-[10px] text-emerald-600 dark:text-emerald-400 font-medium">
                   <CheckCircle2 className="w-3 h-3" />
-                  <span>Verified Competency</span>
+                  <span>Resume Certified Competency</span>
                 </div>
               </div>
             </motion.div>

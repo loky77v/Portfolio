@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Briefcase, GraduationCap, Award, Calendar, MapPin, CheckCircle2, BookOpen } from "lucide-react";
-import { ThemeConfig, Experience, Education, Certification } from "../types";
+import { Briefcase, GraduationCap, Award, Calendar, MapPin, CheckCircle2, BookOpen, Users } from "lucide-react";
+import { ThemeConfig, Experience, Education, Certification, ConferencePresentation } from "../types";
 import CircuitOverlay from "./CircuitOverlay";
 
 interface TimelineProps {
@@ -16,12 +16,12 @@ export default function Timeline({ currentTheme }: TimelineProps) {
       role: "Web Development & Digital Marketing Intern",
       company: "DIGIWORQ Digital Marketing & Technology Solutions",
       location: "Bengaluru, India",
-      duration: "01/2026 - 02/2026",
+      duration: "Jan 2026 – Feb 2026",
       highlights: [
-        "Designed and built 5 responsive web pages for Vidhuth Vaahan solar services using HTML & CSS.",
-        "Tested 3-4 client websites, reporting 30+ visual and functional defects via detailed audit sheets.",
-        "Boosted search visibility using on-page SEO keywords, structure tagging, and backlink submissions.",
-        "Resolved formatting gaps across 12 product e-books with Adobe InDesign and created banners using Canva.",
+        "Tested 3–4 client websites and reported 30+ defects (functional failures, layout inconsistencies, responsiveness issues) in written reports.",
+        "Documented issues in written reports and followed each through to verified resolution.",
+        "Built 5 responsive web pages for Vidhyuth Vaahan India using HTML and CSS as part of a 5-member team.",
+        "Improved client search visibility through on-page SEO; corrected formatting errors in 12 e-books using Adobe InDesign.",
       ],
       type: "experience",
     },
@@ -30,21 +30,21 @@ export default function Timeline({ currentTheme }: TimelineProps) {
   const educations: Education[] = [
     {
       degree: "Bachelor of Computer Applications (BCA)",
-      school: "RBANM's First Grade College",
+      school: "RBANM's First Grade College, Bengaluru",
       cgpa: "8.15 / 10.00",
-      duration: "Completed 07/2026",
+      duration: "Completed Jul 2026",
       type: "education",
     },
     {
-      degree: "PCMB (Pre-University College)",
+      degree: "PCMB (Pre-University)",
       school: "RBANM's Pre-University College",
-      duration: "Completed 03/2023",
+      duration: "Completed Mar 2023",
       type: "education",
     },
     {
-      degree: "SSLC (Secondary School Leaving Certificate)",
-      school: "M.E.G High School, Bangalore",
-      duration: "Completed 07/2021",
+      degree: "SSLC",
+      school: "M.E.G High School, Bengaluru",
+      duration: "Completed Jul 2021",
       type: "education",
     },
   ];
@@ -52,10 +52,18 @@ export default function Timeline({ currentTheme }: TimelineProps) {
   const certifications: Certification[] = [
     { name: "AI Fluency: Framework & Foundations", issuer: "Anthropic" },
     { name: "Claude 101", issuer: "Anthropic" },
-    { name: "Advanced Excel Masterclass", issuer: "Caddnest" },
-    { name: "Tableau Data Visualization", issuer: "Caddnest" },
-    { name: "Power BI Data Analysis", issuer: "Caddnest" },
+    { name: "Advanced Excel, Tableau, Power BI", issuer: "Caddnest" },
   ];
+
+  const conferencePresentation: ConferencePresentation = {
+    title: '"Artificial Intelligence in Communication Systems"',
+    conference: "ICIICT-2026, Thiruthangal Nadar College, Chennai",
+    location: "Chennai, India",
+    date: "Feb 27, 2026",
+    role: "Co-author (2nd of 3)",
+    description: "Communicated technical topics and co-authored research paper on AI integration and modern paradigms in communication systems at ICIICT-2026.",
+    type: "conference",
+  };
 
   const getFilteredItems = () => {
     const combined = [
@@ -78,7 +86,7 @@ export default function Timeline({ currentTheme }: TimelineProps) {
           </h2>
           <div className="w-12 h-1 bg-gradient-to-r from-cyan-500 to-emerald-500 mx-auto rounded-full" />
           <p className="text-stone-800 dark:text-slate-300 text-xs uppercase tracking-wider font-mono mt-3">
-            My Professional Path
+            Career Journey & Academic Milestones
           </p>
         </div>
 
@@ -132,7 +140,7 @@ export default function Timeline({ currentTheme }: TimelineProps) {
                       {/* Meta Tags */}
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                         <span className="text-[10px] font-mono font-bold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase bg-emerald-500/10 px-2.5 py-0.5 rounded border border-emerald-500/15">
-                          {isExp ? "Professional Internship" : "Academic Education"}
+                          {isExp ? "Internship Experience" : "Academic Education"}
                         </span>
                         <div className="flex items-center gap-1.5 text-[11px] text-stone-800 dark:text-slate-300 font-mono">
                           <Calendar className="w-3.5 h-3.5" />
@@ -184,8 +192,47 @@ export default function Timeline({ currentTheme }: TimelineProps) {
             </div>
           </div>
 
-          {/* Certifications & Publications - Right Column */}
+          {/* Certifications & Conference Presentation - Right Column */}
           <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-28 lg:h-fit">
+            {/* Conference Presentation Card */}
+            <div
+              className={`p-6 rounded-3xl ${currentTheme.cardClass} group relative overflow-hidden border border-cyan-500/20 shadow-lg`}
+            >
+              <CircuitOverlay />
+              <div className="flex items-center gap-2.5 border-b border-stone-200/50 dark:border-slate-800/50 pb-4 mb-4">
+                <div className="p-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+                  <BookOpen className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-sans font-bold text-sm uppercase tracking-wider text-stone-800 dark:text-slate-200">
+                    Conference Presentation
+                  </h3>
+                  <span className="text-[10px] font-mono text-cyan-400 font-medium">ICIICT-2026</span>
+                </div>
+              </div>
+
+              <div className="p-3.5 rounded-2xl bg-stone-100/90 dark:bg-slate-900/70 border border-stone-200 dark:border-slate-800/40 flex flex-col gap-2">
+                <span className="text-xs font-bold text-stone-900 dark:text-white leading-snug">
+                  {conferencePresentation.title}
+                </span>
+                <p className="text-[11px] text-stone-800 dark:text-slate-300 leading-relaxed font-medium">
+                  {conferencePresentation.conference}
+                </p>
+                <p className="text-[11px] text-stone-700 dark:text-slate-400 leading-relaxed font-normal">
+                  {conferencePresentation.description}
+                </p>
+                <div className="flex items-center justify-between text-[10px] font-mono text-stone-900 dark:text-slate-200 font-bold mt-1 pt-2 border-t border-white/5">
+                  <span className="flex items-center gap-1 text-emerald-400">
+                    <Calendar className="w-3 h-3" />
+                    {conferencePresentation.date}
+                  </span>
+                  <span className="px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-[9px] font-mono font-bold uppercase tracking-wide">
+                    {conferencePresentation.role}
+                  </span>
+                </div>
+              </div>
+            </div>
+
             {/* Certifications Card */}
             <div
               className={`p-6 rounded-3xl ${currentTheme.cardClass} group relative overflow-hidden`}
@@ -200,8 +247,8 @@ export default function Timeline({ currentTheme }: TimelineProps) {
                 </h3>
               </div>
 
-              <div className="space-y-4">
-                {certifications.map((cert, index) => (
+              <div className="space-y-3.5">
+                {certifications.map((cert) => (
                   <div
                     key={cert.name}
                     className="p-3.5 rounded-2xl bg-stone-100/90 dark:bg-slate-900/70 border border-stone-200 dark:border-slate-800/40 flex flex-col gap-1 hover:border-amber-500/30 transition-colors"
@@ -210,43 +257,13 @@ export default function Timeline({ currentTheme }: TimelineProps) {
                       {cert.name}
                     </span>
                     <div className="flex items-center justify-between text-[10px] font-mono text-stone-900 dark:text-slate-200 font-bold mt-1">
-                      <span>{cert.issuer}</span>
+                      <span className="text-slate-400">{cert.issuer}</span>
                       <span className="px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-600 dark:text-amber-400 text-[9px] font-sans font-medium uppercase tracking-wide">
                         Verified
                       </span>
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-
-            {/* Publications Card  */}
-            <div
-              className={`p-6 rounded-3xl ${currentTheme.cardClass} group relative overflow-hidden`}
-            >
-              <CircuitOverlay />
-              <div className="flex items-center gap-2.5 border-b border-stone-200/50 dark:border-slate-800/50 pb-4 mb-5">
-                <div className="p-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-500">
-                  <BookOpen className="w-5 h-5" />
-                </div>
-                <h3 className="font-sans font-bold text-sm uppercase tracking-wider text-stone-800 dark:text-slate-200">
-                  Publications
-                </h3>
-              </div>
-
-              <div className="p-3.5 rounded-2xl bg-stone-100/90 dark:bg-slate-900/70 border border-stone-200 dark:border-slate-800/40 flex flex-col gap-1.5">
-                <span className="text-xs font-bold text-stone-900 dark:text-white leading-snug">
-                  "Artificial Intelligence in Communication Systems"
-                </span>
-                <p className="text-[11px] text-stone-950 dark:text-slate-100 leading-relaxed font-bold">
-                  Co-authored research paper presented at the International Conference on Intelligent Communication Technologies (IICT). Analyzed routing and communication optimizations.
-                </p>
-                <div className="flex items-center justify-between text-[10px] font-mono text-stone-900 dark:text-slate-200 font-bold mt-1">
-                  <span>Presented at IICT</span>
-                  <span className="px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-[9px] font-sans font-medium uppercase tracking-wide">
-                    Co-authored
-                  </span>
-                </div>
               </div>
             </div>
           </div>

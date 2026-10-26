@@ -32,7 +32,7 @@ export default function Footer() {
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2.5">
             <a
-              href="https://linkedin.com/in/vlokeshwara-a3418a39a"
+              href="https://www.linkedin.com/in/v-lokeshwara-a3418a39a"
               target="_blank"
               rel="noopener noreferrer"
               className="text-stone-500 dark:text-slate-400 hover:text-cyan-500 transition-colors"

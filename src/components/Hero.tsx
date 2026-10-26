@@ -44,7 +44,7 @@ export default function Hero({ currentTheme }: HeroProps) {
         >
           <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
           <span className="text-[11px] font-mono font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-300">
-            Open to Web Developer, QA Tester and Other IT Roles
+            Fresher BCA Graduate (8.15 CGPA) • Open to Opportunities
           </span>
         </motion.div>
 
@@ -65,23 +65,27 @@ export default function Hero({ currentTheme }: HeroProps) {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6"
         >
+          <span className="text-lg md:text-2xl font-semibold tracking-wide text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
+            <ShieldCheck className="w-5 h-5 inline" /> QA Tester
+          </span>
+          <span className="hidden sm:inline text-stone-300 dark:text-slate-700 font-light text-xl">|</span>
           <span className={`text-lg md:text-2xl font-semibold tracking-wide ${getSubtext()}`}>
             Web Developer
           </span>
           <span className="hidden sm:inline text-stone-300 dark:text-slate-700 font-light text-xl">|</span>
-          <span className="text-lg md:text-2xl font-semibold tracking-wide text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
-            <ShieldCheck className="w-5 h-5 inline" /> QA Tester
+          <span className="text-lg md:text-2xl font-semibold tracking-wide text-cyan-500 dark:text-cyan-400">
+            IT Support
           </span>
         </motion.div>
 
-        {/* Tagline */}
+        {/* Tagline / Objective */}
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-stone-900 dark:text-slate-200 max-w-2xl mx-auto text-sm md:text-base font-medium leading-relaxed mb-10"
         >
-          Crafting pristine, secure, and fully responsive user interfaces on the frontend while enforcing solid, bulletproof QA protocols. Focused on bridging creative pixel perfection with robust technical execution.
+          Fresher BCA graduate (8.15 CGPA) with hands-on experience identifying, documenting, and reporting technical issues. Reported 30+ defects across 3–4 client websites and verified resolutions, with working knowledge of HTML, CSS, JavaScript, Java, and Git/GitHub.
         </motion.p>
 
         {/* Call to Actions */}
